@@ -61,7 +61,7 @@ public class AddressConverter {
         payload = convertBits(payload, 8, 5);
         int[] checksum = checksum(payload);
         String cashAddress = Base32.encode(concatArrays(payload, checksum));
-        return PREFIX + SEPARATOR + cashAddress;
+        return cashAddress;
     }
 
     public static String toLegacyAddress(String cashAddress) {
